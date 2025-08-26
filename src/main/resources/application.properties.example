@@ -1,0 +1,23 @@
+spring.application.name=nome-da-api
+
+# Config Postgres
+spring.datasource.url=url
+spring.datasource.username=username
+spring.datasource.password=password
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# appliccation RabbitMQ
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=username
+spring.rabbitmq.password=password
+
+# Configuracoes opcionais
+spring.rabbitmq.listener.simple.auto-startup=true
+spring.rabbitmq.listener.simple.default-requeue-rejected=false
+
+# JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
