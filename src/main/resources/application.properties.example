@@ -1,9 +1,12 @@
-spring.application.name=nome-da-api
+spring.application.name=api-gateway
+
+jwt.public.key=classpath:app.pub
+jwt.private.key=classpath:app.key
 
 # Config Postgres
-spring.datasource.url=url
-spring.datasource.username=username
-spring.datasource.password=password
+spring.datasource.url=jdbc:postgresql://localhost:5432/microservicedb
+spring.datasource.username=admin
+spring.datasource.password=admin123
 spring.datasource.driver-class-name=org.postgresql.Driver
 
 # appliccation RabbitMQ
@@ -21,7 +24,3 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-
-# Autenticacao
-jwt.public.key=caminho-do-arquivo
-jwt.private.key=caminho-do-arquivo

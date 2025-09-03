@@ -7,7 +7,7 @@ public enum FuncaoEnum {
         private Long funcaoId;
         private String nome;
 
-        FuncaoEnum(Long id,String nome){
+        FuncaoEnum(Long id, String nome){
             this.funcaoId = funcaoId;
             this.nome = nome;
         }

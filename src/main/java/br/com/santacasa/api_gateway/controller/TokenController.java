@@ -4,6 +4,8 @@ import br.com.santacasa.api_gateway.dtos.LoginRequest;
 import br.com.santacasa.api_gateway.dtos.LoginResponse;
 import br.com.santacasa.api_gateway.entities.Usuario;
 import br.com.santacasa.api_gateway.service.UsuarioService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
