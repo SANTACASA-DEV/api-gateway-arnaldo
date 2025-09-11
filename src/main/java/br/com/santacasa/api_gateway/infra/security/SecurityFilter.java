@@ -29,31 +29,35 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        String path = request.getRequestURI();
-        if (path.equals("/auth/login") || path.equals("/auth/register") || path.equals("/")) {
-            filterChain.doFilter(request, response);
-            return;
-        }
+//        String path = request.getRequestURI();
+//        if (path.equals("/auth/login") || path.equals("/auth/register") || path.equals("/")) {
+//            System.out.println("✅ Rota pública permitida: " + path);
+//            filterChain.doFilter(request, response);
+//            return;
+//        }
 
         var token = this.recoverToken(request);
+        System.out.println("🔑 Token recebido: " + (token != null ? "Sim" : "Não"));
 
         if(token != null){
             try {
 
                 var matricula = tokenService.validateToken(token);
+                System.out.println("👤 Matricula do token: " + matricula);
+
                 UserDetails user = userRepository.findByMatricula(matricula);
 
                 var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
+
+                System.out.println("✅ Autenticação bem-sucedida para: " + user.getUsername());
             }catch (Exception e){
                 response.setStatus(HttpStatus.UNAUTHORIZED.value());
                 response.getWriter().write("Token inválido: " + e.getMessage());
-                return;
 
             }
         }
-
         filterChain.doFilter(request, response);
     }
 
@@ -64,5 +68,4 @@ public class SecurityFilter extends OncePerRequestFilter {
         }
         return authHeader.replace("Bearer ", "");
     }
-
 }

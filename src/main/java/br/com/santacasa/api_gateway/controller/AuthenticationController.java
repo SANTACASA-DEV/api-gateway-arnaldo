@@ -50,7 +50,8 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid RegisterDTO data){
-    if(this.repository.findByMatricula(data.matricula()) != null){
+        if(this.repository.findByMatricula(data.matricula()) != null){
+            System.out.println("Matrícula encontrada " + data.matricula());
             return ResponseEntity.badRequest().build();
         }
 
