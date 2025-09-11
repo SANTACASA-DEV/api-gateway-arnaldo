@@ -15,7 +15,7 @@ A API Gateway tem como objetivo centralizar, gerenciar e rotear todas as requisi
 - **Spring Data JPA** → Persistência e integração com banco de dados
 - **Spring Validation** → Validação de dados de entrada
 - **Spring AMQP (RabbitMQ)** → Comunicação assíncrona entre serviços
-- **H2 Database** → Banco em memória para testes e desenvolvimento
+- **PostgreSQL (via Docker)** → Banco de dados relacional utilizado no ambiente de desenvolvimento
 - **Jackson** → Serialização/Desserialização de objetos JSON
 - **Lombok** → Redução de código boilerplate
 - **DevTools** → Hot reload em ambiente de desenvolvimento
@@ -43,12 +43,17 @@ src/
    cd sac-microsservico-api-gateway
    ```
 
-2. Compile e execute a aplicação:
+2. Suba os containers do banco de dados (PostgreSQL) e demais serviços com Docker Compose:
+   ```bash
+   docker-compose up -d
+   ```
+
+3. Compile e execute a aplicação:
    ```bash
    ./mvnw spring-boot:run
    ```
 
-3. Acesse a aplicação no navegador:
+4. Acesse a aplicação no navegador:
    ```
    http://localhost:8080
    ```
@@ -62,6 +67,7 @@ src/
 - [Spring Web](https://docs.spring.io/spring-boot/3.5.5/reference/web/servlet.html)
 - [Spring Data JPA](https://docs.spring.io/spring-boot/3.5.5/reference/data/sql.html#data.sql.jpa-and-spring-data)
 - [Spring AMQP (RabbitMQ)](https://docs.spring.io/spring-boot/3.5.5/reference/messaging/amqp.html)
+- [PostgreSQL Docker Image](https://hub.docker.com/_/postgres)
 
 ---
 

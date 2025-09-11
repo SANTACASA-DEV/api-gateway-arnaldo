@@ -32,5 +32,11 @@ build/
 ### VS Code ###
 .vscode/
 
+### IntelliJ
+.idea
+
 ### Credentials ###
 src/main/resources/application.properties
+
+### Scripts DB
+src/main/resources/DB/migration/create-table-users.sql
