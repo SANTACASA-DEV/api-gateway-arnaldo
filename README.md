@@ -20,6 +20,8 @@ A API Gateway tem como objetivo centralizar, gerenciar e rotear todas as requisi
 - **Lombok** → Redução de código boilerplate
 - **DevTools** → Hot reload em ambiente de desenvolvimento
 - **JUnit/Mockito** → Testes automatizados
+- **JWT** -> Token de Authenticação
+- **Spring Security** -> Login e codificação
 
 ---
 
@@ -65,9 +67,11 @@ src/
 - [Documentação oficial do Maven](https://maven.apache.org/guides/index.html)
 - [Spring Boot Maven Plugin](https://docs.spring.io/spring-boot/3.5.5/maven-plugin)
 - [Spring Web](https://docs.spring.io/spring-boot/3.5.5/reference/web/servlet.html)
+- [PostgreSQL Docker Image](https://hub.docker.com/_/postgres)
+- [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
 - [Spring Data JPA](https://docs.spring.io/spring-boot/3.5.5/reference/data/sql.html#data.sql.jpa-and-spring-data)
 - [Spring AMQP (RabbitMQ)](https://docs.spring.io/spring-boot/3.5.5/reference/messaging/amqp.html)
-- [PostgreSQL Docker Image](https://hub.docker.com/_/postgres)
+- [JWT](https://www.jwt.io/)
 
 ---
 
